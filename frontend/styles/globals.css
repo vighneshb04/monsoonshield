@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-rain-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #38bdf8 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f0f9ff;
+  color: #0f172a;
+}
+
+/* Mobile-first scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 2px; }
+
+/* Rain animation for flood alerts */
+@keyframes rainDrop {
+  0%   { transform: translateY(-100px) scaleY(0.8); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateY(100vh) scaleY(1.2); opacity: 0; }
+}
+
+.rain-drop {
+  position: fixed;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, #38bdf8);
+  border-radius: 2px;
+  animation: rainDrop linear infinite;
+  pointer-events: none;
+}
+
+/* Status badges */
+.badge-approved  { @apply bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-1 rounded-full; }
+.badge-pending   { @apply bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-1 rounded-full; }
+.badge-rejected  { @apply bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-1 rounded-full; }
+.badge-paid      { @apply bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded-full; }
+.badge-fraud     { @apply bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-1 rounded-full; }
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+/* Stat card */
+.stat-card {
+  @apply bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover;
+}
