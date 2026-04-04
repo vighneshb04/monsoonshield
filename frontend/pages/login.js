@@ -25,8 +25,8 @@ export default function Login() {
   };
 
   const fillDemo = (type) => {
-    if (type === 'rider') setForm({ phone: '9876543210', password: 'secret' });
-else setForm({ phone: '9999999999', password: 'secret' });
+    if (type === 'rider') setForm({ phone: '9876543210', password: 'rider123' });
+else setForm({ phone: '9999999999', password: 'admin123' });
   };
 
   return (
