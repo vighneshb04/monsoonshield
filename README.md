@@ -421,4 +421,4 @@ cd frontend && npm run dev
 
 *MonsoonShield AI — When it rains, you still get paid.* 🛵🌧️
 
-**Built for Guidewire DEVTrails 2026 | Team: Vighnesh B**
+**Built for Guidewire DEVTrails 2026 | Team: IKEA**
