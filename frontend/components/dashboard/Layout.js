@@ -13,6 +13,7 @@ export default function Layout({ children }) {
     { href: '/policy',     label: 'My Policy',  icon: '📋' },
     { href: '/claims',     label: 'Claims',     icon: '💰' },
     { href: '/zones',      label: 'Zone Risk',  icon: '🗺️' },
+    { href: '/demand', label: 'Storm Cover', icon: '⚡' },
   ];
 
   const adminLinks = [

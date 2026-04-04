@@ -37,6 +37,7 @@ app.use('/api/claim',     require('./routes/claim'));
 app.use('/api/payout',    require('./routes/payout'));
 app.use('/api/dashboard', require('./routes/dashboard'));
 app.use('/api/weather',   require('./routes/weather'));
+app.use('/api/demand', require('./routes/demand'));
 
 // Health check
 app.get('/health', (req, res) => {
