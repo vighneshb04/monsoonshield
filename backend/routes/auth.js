@@ -86,7 +86,7 @@ router.post('/login', async (req, res) => {
     const user = result.rows[0];
 
     // Verify password
-    const isValid = await bcrypt.compare(password, user.password_hash);
+    const isValid = await bcrypt.compare(password.trim(), user.password_hash);
     if (!isValid) {
       return res.status(401).json({ success: false, message: 'Invalid credentials' });
     }
@@ -122,3 +122,5 @@ router.post('/login', async (req, res) => {
 });
 
 module.exports = router;
+console.log("INPUT PASSWORD:", password);
+console.log("HASH:", user.password_hash);
