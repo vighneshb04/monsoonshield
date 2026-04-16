@@ -122,5 +122,3 @@ router.post('/login', async (req, res) => {
 });
 
 module.exports = router;
-console.log("INPUT PASSWORD:", password);
-console.log("HASH:", user.password_hash);
