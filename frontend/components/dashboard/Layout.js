@@ -14,6 +14,7 @@ export default function Layout({ children }) {
     { href: '/claims',     label: 'Claims',     icon: '💰' },
     { href: '/zones',      label: 'Zone Risk',  icon: '🗺️' },
     { href: '/demand', label: 'Storm Cover', icon: '⚡' },
+    { href: '/trust', label: 'Trust Score', icon: '🏆' },
   ];
 
   const adminLinks = [
@@ -21,6 +22,7 @@ export default function Layout({ children }) {
     { href: '/admin/claims',  label: 'Claims',     icon: '📋' },
     { href: '/admin/riders',  label: 'Riders',     icon: '🛵' },
     { href: '/admin/simulate',label: 'Simulate',   icon: '⚡' },
+    { href: '/admin/analytics', label: 'Analytics', icon: '🔮' },
   ];
 
   const links = isAdmin ? adminLinks : riderLinks;

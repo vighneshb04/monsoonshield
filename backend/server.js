@@ -38,6 +38,7 @@ app.use('/api/payout',    require('./routes/payout'));
 app.use('/api/dashboard', require('./routes/dashboard'));
 app.use('/api/weather',   require('./routes/weather'));
 app.use('/api/demand', require('./routes/demand'));
+app.use('/api/trust', require('./routes/trust'));
 
 // Health check
 app.get('/health', (req, res) => {
@@ -46,6 +47,12 @@ app.get('/health', (req, res) => {
 
 // ─── Cron Jobs ────────────────────────────────────────────────────────────────
 const TriggerEngine = require('./services/triggerEngine');
+// Weekly trust score update — every Monday 6am
+cron.schedule('0 6 * * 1', async () => {
+  console.log('[CRON] Running weekly trust score updates...');
+  const TrustEngine = require('./services/trustEngine');
+  await TrustEngine.processWeeklyUpdates();
+});
 
 // Check parametric triggers every 30 minutes
 cron.schedule('*/30 * * * *', async () => {
